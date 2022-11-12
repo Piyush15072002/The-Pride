@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Database Connnection
-const dbUrl = process.env.mongo_url || 'mongodb://localhost:27017/sunhacks';
+const dbUrl = process.env.mongo_url
 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
