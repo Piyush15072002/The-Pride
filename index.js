@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Database Connnection
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/sunhacks';
+const dbUrl = process.env.mongo_url || 'mongodb://localhost:27017/sunhacks';
 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -130,20 +130,6 @@ app.get('/infohub', (req, res) => {
     res.render('infohub.ejs');
 });
 
-app.get('/update', async (req, res) => {
-
-    const site = await Site.find({ sitename: "Ellora Caves" });
-
-    site.longitute = 75.1780;
-    site.latitude = 20.0258;
-
-    console.log(site)
-
-    // await site.save()
-
-    res.send(site)
-
-})
 
 
 
