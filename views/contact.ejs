@@ -1,0 +1,38 @@
+<%- layout("boilerplate.ejs")%>  
+
+<style>
+
+    body{
+        background-color: rgb(188, 188, 255);
+    }
+
+</style>
+
+<div class="container">
+
+    <div class="card shadow m-5 p-5">
+
+        <h1 style="color:blue" class="text-center mb-3">Contact us</h1>
+
+        <form action="/contactus" method="post">
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input style="background-color:rgb(224, 224, 255)" name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Please tell us your query</label>
+            <textarea style="background-color:rgb(228, 228, 255)" name="query" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="text-center">
+          <button class="btn btn-primary w-25 text-center">
+            Send
+          </button>
+        </div>
+        </form>
+
+
+    </div>
+
+</div>
+

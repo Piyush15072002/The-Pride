@@ -1,0 +1,180 @@
+<% layout('./boilerplate.ejs') %> 
+
+<!-- MapBox -->
+<div id='map' style='width: 100%; height: 90vh;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpeWFuZ29rdSIsImEiOiJja3lzZWpnbWYxMzA5MndvM2QzM3d6NmU1In0.Hok-aZpIsP3upuX739Fojg';
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [75.7139, 19.7515], // starting position [lng, lat]
+    zoom: 1, // starting zoom
+    projection: 'globe' // display the map as a 3D globe
+});
+map.on('style.load', () => {
+    map.setFog({}); // Set the default atmosphere style
+});
+</script>
+
+
+
+<div class="stats text-center">
+
+  <div style="height:100%; align-items:center" class="row">
+    <div class="col">
+
+
+     <h2 class="text-white">10K+ Clients</h2> 
+    </div>
+    <div class="col">
+      <h2 class="text-white">500+ Sites</h2>
+    </div>
+    <div class="col">
+      <h2 class="text-white">300+ Guides</h2> 
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Images -->
+
+<div  id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img style="height:500px; width:100%" src="/pictures/main3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img style="height:500px; width:100%" src="/pictures/main2.jpg" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img style="height:500px; width:100%" src="/pictures/main.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <style>
+    .stats{
+      height:50vh;
+      width:100%;
+      border: 10px solid rgb(255, 0, 0);
+      background-color:red;
+      color:white;
+
+    }
+    .col{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    
+  </style>
+  
+
+
+
+  <div style="height:100vh; width:100%; background-color:rgb(157, 157, 255);" class="sites">
+
+    <h1 style="color:darkblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="text-center my-3 py-5">The Popular Heritage Sites</h1>
+
+  
+    <div class="card-group px-3">
+      <div class="card mx-3 border border-5">
+        <img style="height:80%; width:100%;" src="https://www.worldhistory.org/img/c/p/1200x627/4565.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ellora Caves</h5>
+          <p class="card-text">Aurangabad, Maharasthra</p>
+          
+        </div>
+      </div>
+      <div class="card mx-3 border border-5">
+        <img style="height:80%; width:100%;" src="https://www.nomadtrekkers.in/images/sindhudurg/sindhudurg/1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Sindhudurg Fort</h5>
+          <p class="card-text">Sindhudurg, Maharasthra</p>
+
+        </div>
+      </div>
+      <div class="card mx-3 border border-5">
+       
+        <div class="card-body text-center">
+          <h2 class="card-title">More over here...</h2>
+          <p class="card-text">There are many more cultural rich heritage sites, follow the below link for more information.</p>
+          <a style="background-color:darkblue;" href="/sites" class="btn btn-primary px-5 py-3">All Sites</a>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div style="height:100vh; width:100%; background-color: white;"class="sites">
+
+    <h1 style="color:darkblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="text-center my-3 py-5">Our Popular Guides</h1>
+
+
+
+    <div class="card-group px-3 ">
+      <div class="card mx-3 border border-5 border-warning">
+        <img style="height:80%; width:100%;" src="https://thumbs.dreamstime.com/b/security-guard-grand-palace-jaipur-india-october-indian-welcome-unidentified-typical-indian-dress-october-41075625.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Golab Kanawade</h5>
+          <p class="card-text">Jalgaon, Maharasthra</p>
+          
+        </div>
+      </div>
+      <div class="card mx-3 border border-5 border-secondary">
+        <img style="height:80%; width:100%;" src="https://images.squarespace-cdn.com/content/v1/56b589c60442626693853236/1488793006848-FVC8RW1Y61KG31K32I2U/1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Aryan Saraswat</h5>
+          <p class="card-text">Nashik, Maharasthra</p>
+
+        </div>
+      </div>
+      <div class="card mx-3 border border-5 border-danger" style="border:3px solid bronze;">
+        <img style="height:80%; width:100%;" src="https://rajputanacabs.b-cdn.net/wp-content/uploads/2016/06/Jaipur-guide.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ganesh patil</h5>
+          <p class="card-text">Pune, Maharasthra</p>
+
+        </div>
+      </div>
+      
+    </div>
+
+
+    
+ 
+
+
+
+  </div>
+
+  <div style="height:100vh; width:100%; background-color: blue ;"class="sites mb-5 text-center">
+
+    <h1 style="color:rgb(255, 255, 255); font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="text-center my-3 py-5">More from us!</h1>
+
+
+    <h1 style="color:white; font-size:70px;">Hotel/Lodge Booking</h1>
+
+    <h2 class="mt-5">Coming Soon...</h2>
+
+  
+
+
+  </div>
+
+
+
+

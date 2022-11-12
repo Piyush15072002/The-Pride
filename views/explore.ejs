@@ -1,0 +1,89 @@
+<%- layout("boilerplate.ejs") %> 
+
+<style>
+
+    body{
+        background-color: rgb(206, 206, 255);
+        font-family: "Helvetica Neue",Helvetica
+    }
+</style>
+
+
+
+
+<div id='map' style='width: 100%; height: 70vh;'></div>
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpeWFuZ29rdSIsImEiOiJja3lzZWpnbWYxMzA5MndvM2QzM3d6NmU1In0.Hok-aZpIsP3upuX739Fojg';
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [75.7139, 19.7515], // starting position [lng, lat]
+    
+    zoom: 5, // starting zoom
+    projection: 'globe' // display the map as a 3D globe
+});
+map.on('style.load', () => {
+    map.setFog({}); // Set the default atmosphere style
+});
+</script>
+
+
+
+
+
+<div class="container p-5">
+
+    <div class="card mb-3">
+        <img src="<%= site.image %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h1 style="color:darkblue" class="card-title"><%= site.sitename %></h1>
+          <h4> <i> <%= site.city %>, Maharashtra </i></h4>
+          <p class="card-text mt-5"><%= site.description %></p>
+          <p class="card-text"><small class="text-muted">Built in <%= site.built %></small></p>
+        </div>
+      </div>
+
+      <div class="m-3">
+      <a class="btn btn-success" href="/guide"> Get a Guide</a>
+      <a class="btn btn-success" href="/vocalforlocal"> vocalForLocal</a>
+
+    </div>
+
+    <div class="my-5 text-center">
+
+        <h1 class="mb-5">Our Top Recommended Guides</h1>
+      
+    <div class="card-group px-3 my-2 ">
+        <div class="card mx-3 border border-5 border-warning">
+          <img style="height:80%; width:100%;" src="https://thumbs.dreamstime.com/b/security-guard-grand-palace-jaipur-india-october-indian-welcome-unidentified-typical-indian-dress-october-41075625.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Golab Kanawade</h5>
+            <p class="card-text">Jalgaon, Maharasthra</p>
+            
+          </div>
+        </div>
+        <div class="card mx-3 border border-5 border-secondary">
+          <img style="height:80%; width:100%;" src="https://images.squarespace-cdn.com/content/v1/56b589c60442626693853236/1488793006848-FVC8RW1Y61KG31K32I2U/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Aryan Saraswat</h5>
+            <p class="card-text">Nashik, Maharasthra</p>
+  
+          </div>
+        </div>
+        <div class="card mx-3 border border-5 border-danger" style="border:3px solid bronze;">
+          <img style="height:80%; width:100%;" src="https://rajputanacabs.b-cdn.net/wp-content/uploads/2016/06/Jaipur-guide.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ganesh patil</h5>
+            <p class="card-text">Pune, Maharasthra</p>
+  
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+</div>
+
+
+

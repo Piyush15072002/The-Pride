@@ -1,0 +1,36 @@
+<% layout("boilerplate.ejs") %> 
+
+<style>
+
+body{
+    background-color: rgb(218, 218, 255);
+}
+
+</style>
+
+<div class="container">
+
+    <div class="row">
+    <% for (let guide in guides) {%> 
+        <div class="col-4 my-3">
+    
+
+                <div class="card border " >
+                    <img style="height:250px;width:100%" src="<%=guides[guide].image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="">
+                      <h5 class="card-title"><%=guides[guide].username %> <span class="badge bg-success"> <b> ₹ <%=guides[guide].fees %></span></b></h5>
+                    </div>
+                      <p class="card-text "> <%=guides[guide].place %>  </p>
+
+                      <p class="text-muted"><%= new Date((guides[guide].timestamp)*1).toDateString() %></p>
+                   
+                      <a href="/guide/connect/<%=guides[guide]._id%>" class="btn btn-primary">Connect +</a>
+                    </div>
+                  </div>
+                </div>
+
+    <% } %> 
+</div>
+
+</div>

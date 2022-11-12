@@ -1,0 +1,90 @@
+<% layout("boilerplate.ejs") %>
+<style>
+  body{
+    background-color: rgb(208, 208, 255);
+  }
+</style>
+
+<div style="height:100vh; width: 50%;" class="container">
+
+
+<div class="accordion mt-3" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <b> User Login </b>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          
+          
+          <div class="col-6 offset-3 mb-5 mt-5">
+            
+            <form action="/user/login" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email </label>
+                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="********">
+                  </div>
+    
+    
+               
+                  <button class="btn btn-success w-25">Login</button>
+
+                </form>
+    
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         <b> Guide Login </b>
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          
+            <form action="/guide/login" method="post">
+
+                <div class="col-6 offset-3 mb-5 mt-5">
+    
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email </label>
+                        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="********">
+                      </div>
+        
+        
+                   
+                      <button class="btn btn-success w-25">Login</button>
+    
+                    </form>
+
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+</div>
+   
+
+        
+
+</div>
+
+
+
