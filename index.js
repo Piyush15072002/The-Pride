@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {  // if we are not in production mode means we are in development mode then
-    require('dotenv').config();
+    require('dotenv').config()
 }
 
 // Importing libraries and packages
@@ -23,6 +23,23 @@ const Site = require('./model/Sites');
 
 const cookieparser = require('cookie-parser');
 
+
+
+
+// Database Connnection
+const dbUrl = process.env.mongo_url;
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const db = mongoose.connection
+db.on('error', () => {
+    console.error.bind(console, "Connection Error :-<")
+})
+db.once('open', () => {
+    console.log("Connected to Database")
+})
+
+
 // Router routes importing
 
 const userRoutes = require('./routes/users');
@@ -39,20 +56,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-// Database Connnection
-const dbUrl = process.env.mongo_url
-
-mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-
-const db = mongoose.connection
-db.on('error', () => {
-    console.error.bind(console, "Connection Error :-<")
-})
-db.once('open', () => {
-    console.log("Connected to Database")
-})
 
 app.use(cookieparser());
 app.use(express.json());
